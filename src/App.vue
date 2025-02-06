@@ -1,11 +1,10 @@
 <template>
-<Contador></Contador>
+  <HomeView></HomeView>
 </template>
 
 <script setup>
-import Contador from './components/Contador.vue';
+import HomeView from "./views/HomeView.vue";
+import Home from "./components/Home.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
