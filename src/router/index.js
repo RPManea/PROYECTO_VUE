@@ -1,5 +1,5 @@
-import Contador from "@/components/Contador.vue";
-import SideBar from "@/components/SideBar.vue";
+import Contador from "@/modules/contador/components/Contador.vue";
+import SideBar from "@/components/Sidebar.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -21,6 +21,7 @@ const router = createRouter({
     {
       path: "/contador",
       name: "contador",
+      component: () => import("@/modules/contador/components/Contador.vue"),
       component: Contador,
     },
     {
@@ -29,7 +30,12 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("@/components/ListaDeTareas.vue"),
+      component: () => import("@/modules/listaDeTareas/ListaDeTareas.vue"),
+    },
+    {
+      path: "/registrar",
+      name: "registrar",
+      component: () => import("@/modules/registro/views/RegistrarView.vue"),
     },
   ],
 });
